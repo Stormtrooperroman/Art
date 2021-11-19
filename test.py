@@ -2,8 +2,8 @@ import random
 from PIL import Image, ImageDraw
 
 
-r = lambda: random.randint(50,215)
-rc = lambda: (r(), r(), r())
+rand_color = lambda: random.randint(50,215)
+rand_list_color = lambda: (rand_color(), rand_color(), rand_color())
 listSym = []
 
 def create_square(border, draw, randColor, element, size):  
@@ -18,7 +18,7 @@ def create_square(border, draw, randColor, element, size):
 def create_invader(border, draw, size):
     x0, y0, x1, y1 = border
     squareSize = (x1-x0)/size
-    randColors = [rc(), rc(), rc(), (0,0,0), (0,0,0), (0,0,0)]
+    randColors = [rand_list_color(), rand_list_color(), rand_list_color(), (0,0,0), (0,0,0), (0,0,0)]
     i = 1
     for y in range(0, size):
         i *= -1
